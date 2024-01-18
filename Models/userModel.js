@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const UserSchema = new mongoose.Schema(
   {
     username: {
@@ -28,13 +29,25 @@ const UserSchema = new mongoose.Schema(
     livesIn: String,
     workedAt: String,
     relationship: String,
-    followers: [],
-    following: [],
+    // followers: [
+    //   {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'User',
+    //   },
+    // ],
+    // following: [
+    //   {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: 'User',
+    //   },
+    // ],
+    followers: [String],
+    following: [String],
   },
   {
     timestamps: true,
   }
 );
 
-const UserModel = mongoose.model('Users', UserSchema);
+const UserModel = mongoose.model('User', UserSchema);
 module.exports = UserModel;
