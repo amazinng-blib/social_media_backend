@@ -12,9 +12,11 @@ app.use(cors());
 // Routes
 const AuthRoutes = require('./Routes/AuthRoutes');
 const UserRoute = require('./Routes/UserRoute');
+const PostRoute = require('./Routes/PostRoute');
 
 app.use('/auth', AuthRoutes);
 app.use('/user', UserRoute);
+app.use('/post', PostRoute);
 
 // DB
 
